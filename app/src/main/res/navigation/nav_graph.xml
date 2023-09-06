@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/dashboard">
+    <fragment
+        android:id="@+id/dashboard"
+        tools:layout="@layout/fragment_dashboard"
+        android:name="com.example.testing.View.Dashboard"
+        android:label="Dashboard" >
+
+
+        <action
+            android:id="@+id/action_dashboard_to_form"
+            app:destination="@id/form" />
+    </fragment>
+    <fragment
+        android:id="@+id/form"
+        android:name="com.example.testing.View.Form"
+        tools:layout="@layout/fragment_form"
+        android:label="Form" >
+        <action
+            android:id="@+id/action_form_to_dogInfo"
+            app:destination="@id/dogInfo" />
+    </fragment>
+    <fragment
+        android:id="@+id/dogPriceList"
+        android:name="com.example.testing.View.DogPriceList"
+        android:label="fragment_dog_price_list"
+        tools:layout="@layout/fragment_dog_price_list" >
+        <action
+            android:id="@+id/action_dogPriceList_to_dogInfo"
+            app:destination="@id/dogInfo" />
+        <deepLink
+            android:autoVerify="true"
+            app:uri="app://myapp/dogPriceList" />
+    </fragment>
+    <fragment
+        android:id="@+id/dogInfo"
+        android:name="com.example.testing.View.DogInfo"
+        android:label="Dog_Info"
+        tools:layout="@layout/fragment_dog_info" >
+        <argument
+            android:name="amount"
+            app:argType="integer"
+            android:defaultValue="0"/>
+    </fragment>
+
+
+
+
+    <fragment
+        android:id="@+id/history"
+        android:label="history"
+        android:name="com.example.testing.View.History"
+        tools:layout="@layout/fragment_history">
+        <action
+            android:id="@+id/action_history_to_dogInfo"
+            app:destination="@+id/dogInfo" />
+    </fragment>
+
+
+    <fragment
+        android:id="@+id/cart"
+        tools:layout="@layout/fragment_cart"
+        android:name="com.example.testing.View.Cart"
+        android:label="Cart" >
+
+        <action
+            android:id="@+id/action_cart_to_priceList"
+            app:destination="@id/dogPriceList" />
+    </fragment>
+    <fragment
+        android:id="@+id/smart"
+        android:name="com.example.testing.Smart"
+        android:label="fragment_smart"
+        tools:layout="@layout/fragment_smart" />
+    <fragment
+        android:id="@+id/activity"
+        android:name="com.example.testing.Activity"
+        android:label="fragment_activity"
+        tools:layout="@layout/fragment_activity" />
+
+
+</navigation>

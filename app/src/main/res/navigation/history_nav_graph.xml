@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    app:startDestination="@id/history"
+
+    android:id="@+id/history_nav_graph">
+
+    <fragment
+        android:id="@+id/history"
+        android:label="history"
+        android:name="com.example.testing.View.History"
+        tools:layout="@layout/fragment_history">
+        <action
+            android:id="@+id/action_history_to_dogInfo"
+            app:destination="@+id/dogInfo"/>
+    </fragment>
+
+    <fragment
+        android:id="@+id/dogInfo"
+        android:name="com.example.testing.View.DogInfo"
+        android:label="Dog_Info"
+        tools:layout="@layout/fragment_dog_info" />
+
+</navigation>
